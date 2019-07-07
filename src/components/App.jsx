@@ -1,10 +1,12 @@
 import React from 'react';
+import UpsertStop from './UpsertStop';
 
 class App extends React.Component {
     render() {
         return (
-            <div>
-                <h1>Hello Shipwell!</h1>
+            <div className="app-container">
+                <h1>Shipment Itinerary</h1>
+                <UpsertStop/>
             </div>
         );
     }
