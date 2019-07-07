@@ -1,12 +1,12 @@
 import React from 'react';
-import UpsertStop from './UpsertStop';
+import StopForm from './StopForm';
 
 class App extends React.Component {
     render() {
         return (
             <div className="app-container">
                 <h1>Shipment Itinerary</h1>
-                <UpsertStop/>
+                <StopForm buttonLabel="Create New Stop" onSubmit={ (stop) => console.log(stop) }/>
             </div>
         );
     }
