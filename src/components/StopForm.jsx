@@ -28,6 +28,18 @@ class StopForm extends React.Component {
         const { onSubmit } = this.props;
         const stop = { name,  address };
         if (id) stop.id = id;
+        if (!name) {
+            alert('Stop name is required.');
+            return;
+        }
+        if (!address) {
+            alert('Stop address is required.');
+            return;
+        }
+        if (address && address.length <= 3) {
+            alert('Please provide a more accurate address.');
+            return;
+        }
         onSubmit(stop);
     }
 

@@ -53,7 +53,6 @@ const appReducer = (state = defaultState, action) => {
             return newState;
         }
         case EDIT_STOP_COMPLETED: {
-            console.log(action.payload);
             const newState = cloneDeep(state);
             const stop = newState.stops.find(stop => stop.id === action.payload.stop.id);
             stop.name = action.payload.stop.name;

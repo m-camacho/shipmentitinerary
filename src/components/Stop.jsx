@@ -26,7 +26,7 @@ class Stop extends React.Component {
             );
         } else {
             return (
-                <div className="stop-container">
+                <div className={`stop-container ${stop.completed ? ' completed' : ''}`}>
                     <div><strong>Stop Number: </strong>{ number }</div>
                     <div><strong>Name: </strong>{ stop.name }</div>
                     <div><strong>Address: </strong>{ stop.address }</div>

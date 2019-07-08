@@ -19,6 +19,10 @@
     background-color: #ddffff;
 }
 
+.stop-container.completed {
+    background-color: #55cc74;
+}
+
 .stop-container .buttons {
     position: absolute;
     right: 30px;
