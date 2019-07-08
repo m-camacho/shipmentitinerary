@@ -11,7 +11,7 @@ class Itinerary extends React.Component {
         return (
             <div className="itinerary">
                 <h3>You should complete the following stops</h3>
-                {stops.map((stop, index) => <Stop key={stop.id} stop={stop} number={index} />)}
+                {stops.map((stop, index) => <Stop key={stop.id} stop={stop} number={index + 1} />)}
             </div>
         );
     }
