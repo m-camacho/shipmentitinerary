@@ -3,7 +3,8 @@ import {
     ADD_STOP_STARTED,
     ADD_STOP_COMPLETED,
     DELETE_STOP,
-    ADD_STOP_FAILED
+    ADD_STOP_FAILED,
+    TOGLE_COMPLETE_STOP,
 } from '../constants';
 
 export const addStop = (stop) => {
@@ -53,5 +54,10 @@ export const addStopFailed = () => ({
 
 export const deleteStop = (stopId) => ({
     type: DELETE_STOP,
+    payload: { stopId }
+});
+
+export const togleCompleteStop = (stopId) => ({
+    type: TOGLE_COMPLETE_STOP,
     payload: { stopId }
 });

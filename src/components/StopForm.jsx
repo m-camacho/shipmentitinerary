@@ -28,7 +28,7 @@ class StopForm extends React.Component {
     render() {
         const { buttonLabel } = this.props;
         return (
-            <div className="upsert-stop-form">
+            <div className="stop-form">
                 <div>
                     Name: <input type="text" name="name" value={this.state.name} onChange={this.handleChange}/>
                 </div>

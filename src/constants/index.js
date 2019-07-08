@@ -6,3 +6,5 @@ export const ADD_STOP_COMPLETED = 'ADD_STOP_COMPLETED';
 export const ADD_STOP_FAILED = 'ADD_STOP_FAILED';
 
 export const DELETE_STOP = 'DELETE_STOP';
+
+export const TOGLE_COMPLETE_STOP = 'COMPLETE_STOP';
