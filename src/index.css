@@ -1,7 +1,22 @@
 #app {
     padding: 20px;
+    font-family: Verdana,sans-serif;
 }
 
 .app-container {
     padding: 0 15%;
+}
+
+.stop-container {
+    position: relative;
+    margin: 5px 0;
+    padding: 10px 30px;
+    border-left: 6px solid #2196F3;
+    background-color: #ddffff;
+}
+
+.stop-container .buttons {
+    position: absolute;
+    right: 30px;
+    top: 15px;
 }
