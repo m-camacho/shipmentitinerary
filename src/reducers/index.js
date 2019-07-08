@@ -3,9 +3,12 @@ import cloneDeep from 'lodash/cloneDeep';
 import {
     ADD_STOP_STARTED,
     ADD_STOP_COMPLETED,
-    DELETE_STOP,
     ADD_STOP_FAILED,
+    DELETE_STOP,
     TOGLE_COMPLETE_STOP,
+    EDIT_STOP_STARTED,
+    EDIT_STOP_COMPLETED,
+    EDIT_STOP_FAILED,
 } from '../constants';
 
 const defaultState = {
@@ -15,7 +18,8 @@ const defaultState = {
 
 const appReducer = (state = defaultState, action) => {
     switch(action.type) {
-        case ADD_STOP_STARTED: {
+        case ADD_STOP_STARTED:
+        case EDIT_STOP_STARTED: {
             const newState = cloneDeep(state);
             newState.loading = true;
             return newState;
@@ -31,7 +35,8 @@ const appReducer = (state = defaultState, action) => {
             newState.loading = false;
             return newState;
         }
-        case ADD_STOP_FAILED: {
+        case ADD_STOP_FAILED:
+        case EDIT_STOP_FAILED: {
             const newState = cloneDeep(state);
             newState.loading = false;
             return newState;
@@ -45,6 +50,15 @@ const appReducer = (state = defaultState, action) => {
             const newState = cloneDeep(state);
             const stop = newState.stops.find(stop => stop.id === action.payload.stopId);
             stop.completed = !stop.completed;
+            return newState;
+        }
+        case EDIT_STOP_COMPLETED: {
+            console.log(action.payload);
+            const newState = cloneDeep(state);
+            const stop = newState.stops.find(stop => stop.id === action.payload.stop.id);
+            stop.name = action.payload.stop.name;
+            stop.address = action.payload.stop.address;
+            newState.loading = false;
             return newState;
         }
         default:

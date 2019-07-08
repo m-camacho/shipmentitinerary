@@ -4,9 +4,13 @@ import PropTypes from 'prop-types';
 class StopForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            name: props.name || '',
-            address: props.address ||  ''
+        this.state = props.stop ? {
+            id: props.stop.id,
+            name: props.stop.name,
+            address: props.stop.address,
+        } : {
+            name: '',
+            address: '',
         };
         this.handleChange = this.handleChange.bind(this);
         this.submitStop = this.submitStop.bind(this);
@@ -20,9 +24,11 @@ class StopForm extends React.Component {
     }
 
     submitStop() {
-        const { name, address } = this.state;
+        const { id, name, address } = this.state;
         const { onSubmit } = this.props;
-        onSubmit({ name,  address});
+        const stop = { name,  address };
+        if (id) stop.id = id;
+        onSubmit(stop);
     }
 
     render() {
