@@ -12,7 +12,10 @@ class Stop extends React.Component {
                 <div><strong>Name: </strong>{ stop.name }</div>
                 <div><strong>Address: </strong>{ stop.address }</div>
                 <div className="buttons">
-                    <button onClick={() => dispatch(deleteStop(stop.id))}>Delete</button>
+                    <button onClick={() => {
+                        const deleteConfirmation = confirm("Are you sure you want to delete this stop?");
+                        if (deleteConfirmation) dispatch(deleteStop(stop.id));
+                    }}>Delete</button>
                 </div>
             </div>
         );

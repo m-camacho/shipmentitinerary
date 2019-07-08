@@ -24,7 +24,6 @@ export const addStop = (stop) => {
             return response.json();
         })
         .then(response => {
-            console.log(response);
             dispatch(addStopCompleted({
                 name: stop.name,
                 address: response.geocoded_address.formatted_address

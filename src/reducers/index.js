@@ -31,7 +31,6 @@ const appReducer = (state = defaultState, action) => {
             return newState;
         }
         case DELETE_STOP: {
-            console.log(action.payload);
             const newState = cloneDeep(state);
             newState.stops = newState.stops.filter(stop => stop.id !== action.payload.stopId);
             return newState;
